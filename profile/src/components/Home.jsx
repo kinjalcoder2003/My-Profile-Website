@@ -44,7 +44,7 @@ const Home = () => {
 
        <a
   href="/My_Resume.pdf"
-  className="resume-link"
+  className="resume-link"                                  
   download="Kinjal_Joshi_Resume.pdf"
   target="_blank"
   rel="noopener noreferrer"
