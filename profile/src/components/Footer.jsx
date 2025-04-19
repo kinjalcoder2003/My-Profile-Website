@@ -10,7 +10,7 @@ const CustomFooter = () => {
     <Footer className="footer">
       <div className="footer-socials">
         <a
-          href="https://www.linkedin.com/in/kinjaljoshi-dev"
+          href="https://www.linkedin.com/in/kinjal-joshi-73621735a/"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="LinkedIn"
@@ -26,7 +26,7 @@ const CustomFooter = () => {
           <FaInstagram />
         </a>
         <a
-          href="mailto:kinjaljoshi.dev@gmail.com"
+          href="mailto:kinjal.coder@gmail.com"
           aria-label="Gmail"
         >
           <FaEnvelope />

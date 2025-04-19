@@ -42,15 +42,16 @@ const Home = () => {
           <a href="#contact" className="btn btn-outline">Let's Connect</a>
         </div>
 
-        <a
-          href="/path/to/kinjal_Joshi_Resume.pdf"
-          className="resume-link"
-          download="Kinjal_Joshi_Resume.pdf"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          View My Resume
-        </a>
+       <a
+  href="/My_Resume.pdf"
+  className="resume-link"
+  download="Kinjal_Joshi_Resume.pdf"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  View My Resume
+</a>
+
       </div>
     </motion.div>
   );

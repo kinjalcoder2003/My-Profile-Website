@@ -1,12 +1,70 @@
 // src/components/Contact.jsx
-import React from 'react';
-import { Form, Input, Button } from 'antd';
+import React, { useState } from 'react';
+import { Form, Input, Button, notification } from 'antd';
 import '../App.css'; // Make sure this is imported if not already
+import emailjs from 'emailjs-com';
 
 const Contact = () => {
-  const onFinish = (values) => {
-    console.log('Received values:', values);
-    alert("Message sent successfully!");
+
+ const [messageStatus, setMessageStatus] = useState(null); 
+
+  // Form submission handler
+  const onFinish = async (values) => {
+    if (!values.name || !values.email || !values.message) {
+      setMessageStatus({
+        type: "error",
+        message: "All fields are required. Please fill in all the fields.",
+      });
+      return; 
+    }
+
+    const emailRegex = /^[a-zA-Z0-9._-]+@[a-zAZ0-9.-]+\.[a-zA-Z]{2,6}$/;
+    if (!emailRegex.test(values.email)) {
+      setMessageStatus({
+        type: "error",
+        message: "Please enter a valid email address.",
+      });
+      return; 
+    }
+
+    try {
+      await emailjs.send(
+        "service_dem6o8d",//service
+        "template_hibgpmd"//template
+        , 
+                {
+          name: values.name,
+          email: values.email,
+          message: values.message,
+        },
+        "-uWJ8hWP215V4R7UE" //public key
+      )
+
+      setMessageStatus({
+        type: "success",
+        message: "Your message has been sent to Kinjal Joshi.",
+      });
+
+      notification.success({
+        message: "Message Sent Successfully",
+        description: "Your message has been sent to Kinjal Joshi.",
+        placement: "topRight",
+        duration: 3,
+      });
+    } catch (error) {
+      setMessageStatus({
+        type: "error",
+        message: "There was an issue sending your message. Please try again.",
+        
+      });
+
+      notification.error({
+        message: "Message Failed",
+        description: "There was an issue sending your message. Please try again.",
+        placement: "topRight",
+        duration: 3,
+      });
+    }
   };
 
   return (
@@ -44,7 +102,21 @@ const Contact = () => {
           >
             <Input.TextArea rows={3} placeholder="Type your message here..." />
           </Form.Item>
-
+            {/* Show custom status message above the Submit button */}
+        {messageStatus && (
+          <div
+            style={{
+              backgroundColor: messageStatus.type === "success" ? "#4CAF50" : "#f44336",
+              color: "white",
+              padding: "10px",
+              borderRadius: "5px",
+              marginBottom: "20px",
+              fontWeight: "bold",
+            }}
+          >
+            {messageStatus.message}
+          </div>
+        )}
           <Form.Item>
             <Button type="primary" htmlType="submit">
               Send Message

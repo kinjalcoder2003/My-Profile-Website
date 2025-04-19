@@ -11,7 +11,7 @@ const projects = [
     title: 'Profile Website Builder',
     description:
       'Drag-and-drop React app to create and publish custom personal websites. Built with Zustand, Ant Design, and Express.',
-    link: 'https://github.com/kinjalcoder2003',
+    link: 'https://github.com/kinjalcoder2003/Profilebuilder',
   },
   {
     title: 'Healthcare Provider Dashboard',
@@ -19,6 +19,12 @@ const projects = [
       'A dashboard for hospitals and labs with secure messaging, EHR, appointment management, and patient query resolution.',
     link: 'https://github.com/kinjalcoder2003',
   },
+  //  {
+  //   title: 'Tic-Tac-Toe Game',
+  //   description:
+  //     'A dashboard for hospitals and labs with secure messaging, EHR, appointment management, and patient query resolution.',
+  //   link: 'https://github.com/kinjalcoder2003/TicTac',
+  // },
 ];
 
 const Projects = () => {

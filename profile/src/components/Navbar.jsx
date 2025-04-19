@@ -1,15 +1,23 @@
+// src/components/Navbar.jsx
 import React, { useState } from 'react';
 import { Menu, Drawer, Button } from 'antd';
 import { Link } from 'react-scroll';
 import { MenuOutlined } from '@ant-design/icons';
-import Logo from '../assets/logo.png'
+import Logo from '../assets/logo.png';
 
 const Navbar = () => {
   const [visible, setVisible] = useState(false);
 
-  // Handle drawer visibility
   const showDrawer = () => setVisible(true);
   const onClose = () => setVisible(false);
+
+  const navItems = [
+    { key: '1', label: 'Home', to: 'home' },
+    { key: '2', label: 'About', to: 'about' },
+    { key: '3', label: 'Skills', to: 'skills' },
+    { key: '4', label: 'Projects', to: 'projects' },
+    { key: '5', label: 'Contact', to: 'contact' },
+  ];
 
   return (
     <div className="header">
@@ -20,21 +28,19 @@ const Navbar = () => {
       {/* Desktop Menu */}
       <div className="desktop-menu">
         <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['1']}>
-          <Menu.Item key="1">
-            <Link to="home" smooth={true} duration={500}>Home</Link>
-          </Menu.Item>
-          <Menu.Item key="2">
-            <Link to="about" smooth={true} duration={500}>About</Link>
-          </Menu.Item>
-          <Menu.Item key="3">
-            <Link to="skills" smooth={true} duration={500}>Skills</Link>
-          </Menu.Item>
-          <Menu.Item key="4">
-            <Link to="projects" smooth={true} duration={500}>Projects</Link>
-          </Menu.Item>
-          <Menu.Item key="5">
-            <Link to="contact" smooth={true} duration={500}>Contact</Link>
-          </Menu.Item>
+          {navItems.map((item) => (
+            <Menu.Item key={item.key}>
+              <Link
+                to={item.to}
+                smooth={true}
+                duration={500}
+                spy={true}
+                activeClass="active"
+              >
+                {item.label}
+              </Link>
+            </Menu.Item>
+          ))}
         </Menu>
       </div>
 
@@ -54,31 +60,31 @@ const Navbar = () => {
         placement="right"
         closable={false}
         onClose={onClose}
-        visible={visible}
+        open={visible}
         width="200px"
+        className="drawer"
       >
         <Menu
-        className="drawer-menu"  
+          className="drawer-menu"
           mode="inline"
           theme="dark"
           defaultSelectedKeys={['1']}
           style={{ border: 'none' }}
         >
-          <Menu.Item key="1">
-            <Link to="home" smooth={true} duration={500} onClick={onClose}>Home</Link>
-          </Menu.Item>
-          <Menu.Item key="2">
-            <Link to="about" smooth={true} duration={500} onClick={onClose}>About</Link>
-          </Menu.Item>
-          <Menu.Item key="3">
-            <Link to="skills" smooth={true} duration={500} onClick={onClose}>Skills</Link>
-          </Menu.Item>
-          <Menu.Item key="4">
-            <Link to="projects" smooth={true} duration={500} onClick={onClose}>Projects</Link>
-          </Menu.Item>
-          <Menu.Item key="5">
-            <Link to="contact" smooth={true} duration={500} onClick={onClose}>Contact</Link>
-          </Menu.Item>
+          {navItems.map((item) => (
+            <Menu.Item key={item.key}>
+              <Link
+                to={item.to}
+                smooth={true}
+                duration={500}
+                spy={true}
+                activeClass="active"
+                onClick={onClose}
+              >
+                {item.label}
+              </Link>
+            </Menu.Item>
+          ))}
         </Menu>
       </Drawer>
     </div>

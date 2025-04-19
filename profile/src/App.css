@@ -40,7 +40,7 @@ body {
   align-items: center;
   justify-content: center;
   text-align: left;
-  padding: 4rem 0rem;
+  padding: 1rem 0rem;
   color: #0F4C75;
   font-family: 'Poppins', sans-serif;
   background-color: #f1f1f1;
@@ -141,9 +141,8 @@ body {
 
 /* About  */
 .about-section {
-  padding: 120px 20px;
+  padding: 7rem 1rem;
   background-color: #f1f1f1; 
-
   font-family: 'Poppins', sans-serif;
   color: #FFFFFF; 
 }
@@ -258,7 +257,7 @@ color: #3282B8;
 
 /* Skills section */
 .skills-section {
-  padding: 120px 20px;
+  padding: 7rem 1rem;
   background-color: #f1f1f1;
   color: #7e7b7b;
   text-align: center;
@@ -296,7 +295,7 @@ color: #3282B8;
 
 /* Projects Section */
 .projects-section {
-  padding: 120px 20px;
+  padding: 7rem 1rem;
   font-family: 'Poppins', sans-serif;
   text-align: center;
   background-color: #f1f1f1; 
@@ -374,13 +373,13 @@ color: #3282B8;
   }
 
   .project-card {
-    max-width: 90%;
+    max-width: 80%;
   }
 }
 
 /* Contact Form Styling */
 #contact {
-  padding: 60px 20px;
+  padding: 4rem 1rem;
   border-radius: 12px;
   background-color: #f1f1f1;
 
@@ -537,7 +536,7 @@ color: #3282B8;
   }
 
   .section {
-    padding: 120px 0px 80px;
+    padding: 10px 0px 80px;
   }
 
   .section h2 {
@@ -613,12 +612,12 @@ text-align: center;
 
 
 /* Home Page Mobile Responsiveness */
-@media (max-width: 768px) {
+@media (max-width: 768px ) {
   .home-container {
     flex-direction: column;
     text-align: center;
     padding: 0rem 1rem;
-    margin: 2rem;
+    min-height: 50vh;
   }
 
   .hero-heading {
@@ -647,12 +646,10 @@ text-align: center;
   }
 
   .hero-buttons {
-    /* flex-direction: column; */
     align-items: center;
     display: flex;
     justify-content: center;
     gap: 1rem;
-    /* margin-left: 2rem; */
   }
 
   .btn, .btn-outline {
