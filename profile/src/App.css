@@ -617,7 +617,7 @@ text-align: center;
     flex-direction: column;
     text-align: center;
     padding: 0rem 1rem;
-    min-height: 50vh;
+    min-height: 80vh;
   }
 
   .hero-heading {

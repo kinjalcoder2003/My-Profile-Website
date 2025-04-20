@@ -1,7 +1,7 @@
 // src/components/Footer.jsx
 import React from 'react';
 import { Layout } from 'antd';
-import { FaLinkedin, FaInstagram, FaEnvelope } from 'react-icons/fa';
+import { FaLinkedin, FaInstagram, FaEnvelope, FaGithub } from 'react-icons/fa';
 
 const { Footer } = Layout;
 
@@ -17,14 +17,16 @@ const CustomFooter = () => {
         >
           <FaLinkedin />
         </a>
+
         <a
-          href="https://www.instagram.com/kinjal.codes"
+          href="https://github.com/kinjalcoder2003"
           target="_blank"
           rel="noopener noreferrer"
-          aria-label="Instagram"
+          aria-label="GitHub"
         >
-          <FaInstagram />
+          <FaGithub />
         </a>
+
         <a
           href="mailto:kinjal.coder@gmail.com"
           aria-label="Gmail"
